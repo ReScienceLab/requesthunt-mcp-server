@@ -71,3 +71,15 @@ export interface ApiResponse<T> {
     message: string;
   };
 }
+
+export interface ScrapeJob {
+  jobId: string;
+  status: "pending" | "running" | "completed" | "failed";
+  topic: string;
+  platforms: ("reddit" | "x" | "github")[];
+  progress?: Record<string, "pending" | "running" | "done" | "error" | "skipped">;
+  requestsCreated?: number;
+  startedAt?: string;
+  completedAt?: string;
+  error?: string;
+}

@@ -81,6 +81,17 @@ List available topics organized by category.
 
 **Example:** "Show me all available topics I can filter by"
 
+### `scrape_requests`
+
+Start an on-demand scrape job to collect fresh feature requests.
+
+**Parameters:**
+- `topic` (required): Topic to scrape (2-100 characters)
+- `platforms` (optional): Array of platforms (`reddit`, `x`, `github`)
+- `wait` (optional): Wait for completion (default: true, max 2 min)
+
+**Example:** "Scrape feature requests about graphene batteries from Reddit and X"
+
 ## Rate Limits
 
 | Tier | Cached Requests | Realtime Requests |

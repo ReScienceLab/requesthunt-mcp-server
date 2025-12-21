@@ -4,6 +4,7 @@ import type {
   SearchMeta,
   ListResult,
   Topic,
+  ScrapeJob,
 } from "./types.js";
 
 const API_BASE = "https://requesthunt.com/api/v1";
@@ -99,5 +100,23 @@ export async function listRequests(params: ListParams): Promise<ListResult> {
 
 export async function getTopics(): Promise<Topic[]> {
   const response = await request<Topic[]>("/topics");
+  return response.data!;
+}
+
+export interface ScrapeParams {
+  topic: string;
+  platforms?: ("reddit" | "x" | "github")[];
+}
+
+export async function startScrapeJob(params: ScrapeParams): Promise<ScrapeJob> {
+  const response = await request<ScrapeJob>("/scrape", {
+    method: "POST",
+    body: JSON.stringify(params),
+  });
+  return response.data!;
+}
+
+export async function getScrapeJobStatus(jobId: string): Promise<ScrapeJob> {
+  const response = await request<ScrapeJob>(`/scrape/${jobId}`);
   return response.data!;
 }
