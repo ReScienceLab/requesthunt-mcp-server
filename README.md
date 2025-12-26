@@ -1,5 +1,6 @@
 # RequestHunt MCP Server
 
+[![MCP Badge](https://lobehub.com/badge/mcp/resciencelab-requesthunt-mcp-server)](https://lobehub.com/mcp/resciencelab-requesthunt-mcp-server)
 [![npm version](https://badge.fury.io/js/%40resciencelab%2Frequesthunt-mcp-server.svg)](https://www.npmjs.com/package/@resciencelab/requesthunt-mcp-server)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -46,6 +47,53 @@ Restart Claude Desktop and try:
 - "Search for feature requests about dark mode"
 - "Find what users are requesting for Notion"
 - "List top feature requests for VS Code"
+
+## Prompts
+
+### `discover-requests`
+Help discover feature requests for any product or topic.
+
+**Arguments:**
+- `topic` (required): Product or topic name (e.g., "Notion", "VS Code")
+- `expand` (optional): Enable AI topic expansion (default: true)
+
+**Usage in Claude:**
+> "Use the discover-requests prompt for Notion"
+
+### `analyze-trends`
+Analyze patterns and trends in feature requests.
+
+**Arguments:**
+- `topic` (required): Topic to analyze
+- `platforms` (optional): Comma-separated platforms or 'all'
+
+### `compare-platforms`
+Compare requests across Reddit, X, and GitHub.
+
+**Arguments:**
+- `topic` (required): Topic to compare
+- `limit` (optional): Results per platform (default: 10)
+
+### `find-quick-wins`
+Identify frequently requested features for roadmap planning.
+
+**Arguments:**
+- `topic` (required): Product or topic name
+- `sortBy` (optional): Sort preference (top/new, default: top)
+
+## Resources
+
+### `topics://list`
+Browse all available topics organized by category.
+
+### `guide://getting-started`
+Quick start guide with examples and best practices.
+
+### `examples://queries`
+Example queries for common use cases like product research and competitor analysis.
+
+### `stats://limits`
+View API rate limits and usage information for free and pro tiers.
 
 ## Available Tools
 

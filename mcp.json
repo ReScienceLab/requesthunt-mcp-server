@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/modelcontextprotocol/specification/main/schema/mcp.schema.json",
   "name": "requesthunt",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "MCP server for RequestHunt - search feature requests from Reddit, X, and GitHub",
   "tools": [
     {
@@ -115,6 +115,98 @@
         },
         "required": ["topic"]
       }
+    }
+  ],
+  "prompts": [
+    {
+      "name": "discover-requests",
+      "description": "Discover relevant feature requests for a product or topic",
+      "arguments": [
+        {
+          "name": "topic",
+          "description": "Product or topic name (e.g., 'Notion', 'VS Code')",
+          "required": true
+        },
+        {
+          "name": "expand",
+          "description": "Enable AI topic expansion (true/false, default: true)",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "analyze-trends",
+      "description": "Analyze patterns and trends in feature requests for a topic",
+      "arguments": [
+        {
+          "name": "topic",
+          "description": "Topic to analyze",
+          "required": true
+        },
+        {
+          "name": "platforms",
+          "description": "Comma-separated platforms (reddit,x,github) or 'all'",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "compare-platforms",
+      "description": "Compare feature requests across Reddit, X, and GitHub",
+      "arguments": [
+        {
+          "name": "topic",
+          "description": "Topic to compare",
+          "required": true
+        },
+        {
+          "name": "limit",
+          "description": "Results per platform (default: 10)",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "find-quick-wins",
+      "description": "Identify frequently requested features that could be quick wins",
+      "arguments": [
+        {
+          "name": "topic",
+          "description": "Product or topic name",
+          "required": true
+        },
+        {
+          "name": "sortBy",
+          "description": "Sort preference (top/new, default: top)",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "resources": [
+    {
+      "uri": "topics://list",
+      "name": "Available Topics",
+      "description": "List of all topics organized by category",
+      "mimeType": "application/json"
+    },
+    {
+      "uri": "guide://getting-started",
+      "name": "Getting Started Guide",
+      "description": "Quick start guide with examples",
+      "mimeType": "text/markdown"
+    },
+    {
+      "uri": "examples://queries",
+      "name": "Example Queries",
+      "description": "Example queries for common use cases",
+      "mimeType": "application/json"
+    },
+    {
+      "uri": "stats://limits",
+      "name": "API Rate Limits",
+      "description": "API rate limits and usage information",
+      "mimeType": "application/json"
     }
   ]
 }

@@ -5,6 +5,35 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.2] - 2025-12-26
+
+### Added
+
+- **4 new prompts** for guided discovery and analysis:
+  - `discover-requests`: Discover relevant feature requests for a product or topic
+  - `analyze-trends`: Analyze patterns and trends in feature requests
+  - `compare-platforms`: Compare requests across Reddit, X, and GitHub
+  - `find-quick-wins`: Identify frequently requested features for roadmap planning
+- **4 new resources** for context and examples:
+  - `topics://list`: Available topics organized by category
+  - `guide://getting-started`: Quick start guide with examples
+  - `examples://queries`: Example queries for common use cases
+  - `stats://limits`: API rate limits and usage information
+- LobeHub MCP badge to README
+
+### Improved
+
+- Enhanced mcp.json manifest with prompts and resources metadata
+- Updated README with comprehensive prompts and resources documentation
+- Better user onboarding experience with guided prompts
+- Improved LobeHub quality score through additional MCP features
+
+### Technical
+
+- Registered prompts in `src/prompts/index.ts`
+- Registered resources in `src/resources/index.ts`
+- Updated main server initialization to include prompts and resources
+
 ## [1.2.0] - 2025-12-21
 
 ### Added
